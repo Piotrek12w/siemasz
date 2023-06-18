@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulaotr</title>
+</head>
+<body>
+    <input type="text" id="number1" placeholder="Liczba1">
+    <input type="text" id="number2" placeholder="Liczba2">
+
+
+    <button onclick="add()">Dodaj (+)</button>
+    <button onclick="subtract()">Odejmij(-)</button>
+    <button onclick="multiply()">Pomnóż (*)</button>
+    <button onclick="divide()">Podziel (/)</button>
+<button onclick=" clearResult()">Usuń</button>
+
+    <h2>Wynik: <span id="result"></span></h2>
+
+    <script>
+let calculation ="";
+
+function add() {
+    var num1 = parseFloat(document.getElementById("number1").value);
+    var num2 = parseFloat(document.getElementById("number2").value);
+    var result = num1 + num2;
+    document.getElementById("result").textContent = result;
+}
+function subtract() {
+    var num1 = (document.getElementById("number1").value);
+var num2 = (document.getElementById("number2").value);
+var result = num1 - num2;
+document.getElementById("result").textContent = result;
+}
+
+function multiply() {
+    var num1 = parseFloat(document.getElementById("number1").value);
+    var num2 = parseFloat(document.getElementById("number2").value);
+    var result = num1 * num2;
+    document.getElementById("result").textContent = result;
+}
+
+function divide() {
+    var num1 = parseFloat(document.getElementById("number1").value);
+    var num2 = parseFloat(document.getElementById("number2").value);
+    var result = num1 / num2;
+    document.getElementById("result").textContent = result;
+}
+
+function clearResult() {
+        calculation = "";
+        document.getElementById("result").value = "";
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

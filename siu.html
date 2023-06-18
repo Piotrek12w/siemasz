@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator</title>
+    <style>
+      .calculator {
+        width: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="result" readonly />
+      <br />
+      <button onclick="clearResult()">Czyść</button>
+      <br />
+      <button onclick="appendNumber(1)">1</button>
+      <button onclick="appendNumber(2)">2</button>
+      <button onclick="appendNumber(3)">3</button>
+      <br />
+      <button onclick="appendNumber(4)">4</button>
+      <button onclick="appendNumber(5)">5</button>
+      <button onclick="appendNumber(6)">6</button>
+      <br />
+      <button onclick="appendNumber(7)">7</button>
+      <button onclick="appendNumber(8)">8</button>
+      <button onclick="appendNumber(9)">9</button>
+      <br />
+      <button onclick="appendNumber(0)">0</button>
+      <button onclick="appendOperator('+')">+</button>
+      <button onclick="appendOperator('-')">-</button>
+      <br />
+      <button onclick="appendOperator('*')">*</button>
+      <button onclick="appendOperator('/')">/</button>
+      <button onclick="calculate()">=</button>
+    </div>
+
+    <script>
+      let calculation = "";
+
+      function appendNumber(number) {
+        calculation += number;
+        document.getElementById("result").value = calculation;
+      }
+
+      function appendOperator(operator) {
+        calculation += operator;
+        document.getElementById("result").value = calculation;
+      }
+
+      function calculate() {
+        try {
+          const result = eval(calculation);
+          document.getElementById("result").value = result;
+          calculation = result;
+        } catch (error) {
+          document.getElementById("result").value = "Błąd";
+        }
+      }
+
+      function clearResult() {
+        calculation = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>
