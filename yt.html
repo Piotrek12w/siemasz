@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Legends X</title>
+</head>
+<style>
+.score {
+    text-align: center;
+    font-size: 50px;
+}
+
+.Kliknij {
+ 
+
+
+    
+}
+
+</style>
+
+</html>
+
+<body>
+    
+   <div class="Kliknij"> <button onclick="clickButton()">Kliknij</button></div>
+<br>
+ <div class="score"><span id="clicksCount">0</span></div><br>
+<button id="DCB" onclick="BDC()">Podwójne kliknięcia(100kliknięć)</button><br>
+<button id="TCB" onclick="BTC()">Potrójne kliknięcia(500kliknięć)</button><br>
+
+
+<script>
+
+var clicks = 0;
+var doubleClicksBought = false;
+var tripleClicksBought = false;
+
+function clickButton() {
+    clicks++;
+
+
+if (doubleClicksBought) {
+    clicks++
+}
+
+if (tripleClicksBought) {
+    clicks+= 3;
+}
+
+document.getElementById("clicksCount").innerHTML = clicks;
+}
+
+function BDC() {
+    if (clicks >=100 && !doubleClicksBought) {
+        clicks -=100;
+        doubleClicksBought = true;
+        document.getElementById("clicksCount").innerHTML = clicks;
+        document.getElementById("DCB").disabled = true;
+
+    }
+}
+
+function BTC() {
+    if (clicks >=500 && !tripleClicksBought) {
+clicks -=500;
+tripleClicksBought = true;
+document.getElementById("clicksCount").innerHTML = clicks;
+document.getElementById("TCB").disabled = true;
+    }
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
